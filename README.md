@@ -1,72 +1,50 @@
-# niche internet
+# Niche Internet
 
-**[niche internet](https://niche-internet.vercel.app/)** is a platform to discover and highlight lesser-known YouTube creators who produce quality content. The website connects users with hidden gems by letting them submit, vote, and explore creators, making it easier for small creators to gain visibility.
+A community-driven site for discovering lesser-known YouTube channels and interesting corners of the web. Users submit channels and websites, vote on them, and explore results ranked so that small creators get visibility instead of being buried by big ones.
 
-Check it out at https://niche-internet.vercel.app/
+**Live:** https://nicheinternet.vercel.app
+
+Built during [Hack Club High Seas 2024](https://highseas.hackclub.com).
 
 ## Features
 
-### 🎥 Channel Discovery
+- **Submit channels and websites** by URL or @handle, with a short description. Channel name, avatar, subscriber count and keywords are fetched from the YouTube Data API.
+- **Voting and ranking.** Submissions are ranked by a score that combines votes, subscriber count (fewer subscribers rank higher) and submission date (new submissions get a temporary boost).
+- **Search** across channel names/URLs, @handles, YouTube keywords, and both user-written and YouTube descriptions.
 
-- Submit YouTube channels by ID, link, or @handle.
-- User-submitted descriptions add a personal touch to highlight why each creator is worth exploring.
-- Detailed channel information is displayed, including number of subscribers and profile pictures.
+## Tech stack
 
-### 📊 Sorting Algorithm
+| Area | Technology |
+| --- | --- |
+| Framework | SvelteKit |
+| Database | PostgreSQL |
+| External API | YouTube Data API v3 |
+| Hosting | Vercel |
 
-- Our algorithm ensures fairness by ranking channels based on:
-  - Number of votes
-  - Number of subscribers (favoring fewer subscribers)
-  - Date of submission (newer submissions get a slight boost initially).
+## Getting started
 
-### 🔎 Search Functionality
+Requirements: Node.js, a PostgreSQL database, and a YouTube Data API key.
 
-- Find creators based on:
-  - Keywords provided by YouTube API
-  - Descriptions (both user-provided and YouTube-provided)
-  - Channel names or @handles.
+```bash
+git clone https://github.com/mbarancik/niche-internet.git
+cd niche-internet
+npm install
 
-### 🚦 Content Moderation
+cat << 'EOF' > .env
+DATABASE_URL=your_connection_string
+YOUTUBE_API_KEY=your_api_key
+EOF 
 
-- The platform is regulated to prevent misuse or inappropriate content.
-- Users can report submissions that violate guidelines.
-- The owner reserves the right to ban specific channels if necessary.
-- Submissions are limited by IP address to prevent spam.
+npm run dev
+```
 
-## How It Works
+Environment variables:
 
-1. **Submit a Channel**
+| Variable | Description |
+| --- | --- |
+| `DATABASE_URL` | PostgreSQL connection string |
+| `YOUTUBE_API_KEY` | YouTube Data API v3 key |
 
-   - Users can submit a YouTube channel using its ID, link, or @handle.
-   - Provide a brief description to explain why the channel is worth checking out.
+## License
 
-2. **Vote for Favorites**
-
-   - Users can browse submitted channels and vote for the ones they enjoy.
-
-3. **Explore Channels**
-
-   - Use the search feature to find channels based on your interests, exploring hidden gems based on tags, descriptions, and names.
-
-4. **Algorithm in Action**
-
-   - Channels are ranked dynamically, ensuring those with fewer subscribers but high-quality content can shine.
-
-5. **Report and Moderation**
-   - If you encounter a problematic submission, use the report feature to notify moderators.
-
-## Technology Stack
-
-- **Frontend**: Svelte
-- **Backend**: SvelteKit
-- **Database**: PostgreSQL
-- **YouTube Data API**: To fetch channel information and metadata.
-
-## Screnshots
-
-![Screenshot](https://cloud-lbmczc5b9-hack-club-bot.vercel.app/0image.png)
-![Screenshot](https://cloud-9ygw6cv5q-hack-club-bot.vercel.app/0image.png)
-
-## Licenses
-
-See NOTICE.txt for licenses of open source projects used.
+Third-party licences are listed in [NOTICE.txt](NOTICE.txt).
