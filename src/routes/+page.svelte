@@ -102,16 +102,6 @@
 	class="bg-theme h-screen w-screen -z-10 absolute top-0 left-0"
 	style="background: var(--youtube-gradient); {theme === 'youtube' ? 'opacity: 1;' : 'opacity: 0;'}"
 ></div>
-<div
-	class="bg-theme h-screen w-screen -z-10 absolute top-0 left-0"
-	style="background: var(--tiktok-gradient); {theme === 'tiktok' ? 'opacity: 1;' : 'opacity: 0;'}"
-></div>
-<div
-	class="bg-theme h-screen w-screen -z-10 absolute top-0 left-0"
-	style="background: var(--instagram-gradient); {theme === 'instagram'
-		? 'opacity: 1;'
-		: 'opacity: 0;'}"
-></div>
 
 <div
 	class="bg min-h-screen overflow-hidden"
@@ -138,7 +128,7 @@
 		<div class="px-4 pb-4 flex flex-col items-center justify-center">
 			<h2 class="text-center" style="color: #ffffff60;">discover unknown websites and creators</h2>
 			<h1 class="title mb-4 whitespace-pre">{title}{blinkingCursor}</h1>
-			<div class="grid grid-cols-1 grid-rows-4 gap-2 md:grid-cols-2 md:grid-rows-2">
+			<div class="grid grid-cols-1 grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1">
 				<a
 					class="card flex items-center justify-center px-8 py-3 rounded-lg"
 					onmouseenter={() => (theme = 'web')}
@@ -157,26 +147,6 @@
 					href="/youtube"
 				>
 					<h2>NICHE YOUTUBE</h2>
-				</a>
-
-				<a
-					class="card flex items-center justify-center px-8 py-3 rounded-lg border-dashed"
-					onmouseenter={() => (theme = 'tiktok')}
-					onmouseleave={() => (theme = 'menu')}
-					style={theme === 'tiktok' || theme === 'menu' ? 'color: var(--text-color);' : ''}
-					href="/#"
-				>
-					<h2>NICHE TIKTOK <sup>soon</sup></h2>
-				</a>
-
-				<a
-					class="card flex items-center justify-center px-8 py-3 rounded-lg border-dashed"
-					onmouseenter={() => (theme = 'instagram')}
-					onmouseleave={() => (theme = 'menu')}
-					style={theme === 'instagram' || theme === 'menu' ? 'color: var(--text-color);' : ''}
-					href="/#"
-				>
-					<h2>NICHE INSTAGRAM <sup>soon</sup></h2>
 				</a>
 			</div>
 

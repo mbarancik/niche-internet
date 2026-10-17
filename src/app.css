@@ -15,14 +15,6 @@
 	--youtube-bg-2: #920909;
 	--youtube-gradient: linear-gradient(55deg, var(--youtube-bg), var(--youtube-bg-2));
 
-	--tiktok-bg: #043336;
-	--tiktok-bg-2: #7c0327;
-	--tiktok-gradient: linear-gradient(55deg, var(--tiktok-bg) 10%, var(--tiktok-bg-2));
-
-	--instagram-bg: #3b0227;
-	--instagram-bg-2: #995609;
-	--instagram-gradient: linear-gradient(55deg, var(--instagram-bg), var(--instagram-bg-2));
-
 	--text-color: #ffffffbb;
 	--border-color: #ffffff30;
 }
